@@ -1,0 +1,328 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  /* background-color: #e4decd; */
+  background: linear-gradient(to right, #eacda3, #d6ae7b);
+}
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+}
+
+#home img {
+  border-radius: 50%;
+}
+
+/* nav */
+/* navbar */
+#nav {
+  display: none;
+}
+.navigation {
+  padding-bottom: 10rem;
+}
+.navigation__list {
+  position: fixed;
+  background-color: #c19434;
+  list-style: none;
+  opacity: 1;
+  width: 0;
+  height: 50%;
+  top: -8rem;
+  transition: all 0.2s;
+}
+.navigation__show {
+  width: 50%;
+  padding: 7rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  z-index: 1;
+}
+.navigation__item {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid #d6ae7b;
+}
+.navigation__link {
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+.navigation__icon {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.navigation__icon-line-hamburger {
+  transition: all 0.2s;
+}
+.navigation__icon-line-close {
+  position: absolute;
+  padding: 1rem 1rem;
+  margin-top: 2.2rem;
+  top: 0;
+  left: 0;
+}
+.navigation__icon-line-close:nth-child(2) {
+  opacity: 0;
+}
+.navigation__icon-line-close:first-child {
+  transform: rotate(135deg);
+  transition: all 0.2s;
+}
+.navigation__icon-line-close:last-child {
+  transform: rotate(-135deg);
+  transition: all 0.2s;
+}
+.header {
+  display: flex;
+}
+.section-title {
+  text-align: center;
+}
+.brand {
+  margin-left: auto;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+}
+/* projects section */
+/* #projects {
+  height: 100vh;
+} */
+.projects {
+  padding: 3rem 0;
+}
+.projects__center {
+  max-width: 90vw;
+  margin: 2rem auto;
+}
+.projects__center h2 {
+  text-align: center;
+}
+.projects__center h3 {
+  text-align: center;
+}
+.projects__center h3 i {
+  margin-right: 0.5rem;
+}
+.projects__single-project {
+  margin: 2rem auto;
+  position: relative;
+}
+.projects__single-project-img {
+  display: block;
+  width: 100%;
+  border-radius: 0.25rem;
+}
+.projects__single-project::before {
+  content: "";
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: scale(0);
+  /* transition: all 1s ease; */
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+.projects__single-project:hover:before {
+  transform: scale(1);
+  opacity: 0.5;
+}
+.projects__single-project-icon {
+  color: var(--light);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 6rem;
+  transform: scale(0);
+  opacity: 0;
+  /* transition: all 1.3s ease; */
+  transition: all 0.9s ease;
+}
+.projects__single-project-icon:hover {
+  color: gray;
+}
+.projects__single-project:hover .projects__single-project-icon {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -50%);
+}
+/* skill bars */
+
+.container {
+  width: 90%;
+  padding-bottom: 5rem;
+  margin: 0 auto;
+}
+.bar {
+  background-color: #c19434;
+  padding: 2px;
+  border-radius: 2px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.bar::before {
+  content: attr(data-skill);
+  background-color: #a4ee95;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+}
+
+.bar.green::before {
+  background-color: #c8e992e7;
+}
+.bar.yellow::before {
+  background-color: #e9da87;
+}
+.bar.orange::before {
+  background-color: #f17d39;
+}
+.bar.red::before {
+  background-color: #f1705e;
+}
+
+.bar.learning::before {
+  width: calc(20% - 10px);
+}
+.bar.basic::before {
+  width: calc(40% - 10px);
+}
+.bar.intermediate::before {
+  width: calc(60% - 10px);
+}
+.bar.advanced::before {
+  width: calc(80% - 10px);
+}
+.bar.expert::before {
+  width: calc(100% - 10px);
+}
+
+hr.style-seven {
+  overflow: visible; /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: #c19434;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr.style-seven:before {
+  /* Not really supposed to work, but does */
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: #c19434;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+#contact {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+#contact address {
+  padding-top: 2rem;
+  font-size: 1.5rem;
+}
+footer {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .home-group {
+    display: flex;
+    align-items: center;
+  }
+  #home img {
+    margin-right: 2rem;
+  }
+  .home-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .projects__center {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .projects__single-project {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+  .projects__single-project-group {
+    width: 30%;
+    padding-bottom: 4rem;
+  }
+  .navigation {
+    display: none;
+  }
+  /* nav */
+  #nav {
+    display: block;
+    z-index: 100;
+  }
+  .nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    /* background-color: #deb887; */
+    background-color: #c19434;
+  }
+
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    margin: 1.5rem 0 1.5rem 2rem;
+  }
+  .nav-item a {
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-size: 1.5rem;
+    color: #eacda3;
+    padding: 1rem;
+    transition: all 0.4s ease-out;
+  }
+  .nav-item a:hover {
+    background-color: #eacda3;
+    color: #c19434;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .sticky + .projects {
+    padding-top: 102px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .projects__single-project {
+    flex: 0 0 calc(25% - 0.5rem);
+  }
+}
+/* end of projects section */
