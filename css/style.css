@@ -109,7 +109,7 @@ body {
 /* #projects {
   height: 100vh;
 } */
-.projects {
+#projects {
   padding: 3rem 0;
 }
 .projects__center {
