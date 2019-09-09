@@ -41,5 +41,6 @@ const toggleClass = name => {
 document.querySelectorAll(".home, .projects, .skills, .contact").forEach(el => {
   el.addEventListener("click", () => {
     menu.classList.toggle("navigation__show");
+    toggleClass("navigation__icon-line-close");
   });
 });
